@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HydroIntel IQ — Software for water and wastewater operations</title>
+<meta name="description" content="HydroIntel IQ builds Tailwater, operations software for water and wastewater plants: sampling and compliance, lab data, plant records and an assistant that answers from your own data.">
+<link rel="icon" type="image/png" href="images/hydrointel-iq-mark.png">
+<style>
+  :root {
+    --bg: #f6f9fc; --surface: #ffffff; --ink: #14202e; --muted: #52627a;
+    --line: #dbe4ee; --brand: #0b6fb8; --brand-ink: #ffffff; --brand-soft: #e4f1fb;
+    --deep: #0a2a43;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0c141d; --surface: #111c28; --ink: #e8eef5; --muted: #9db0c5;
+      --line: #223245; --brand: #4aa3e0; --brand-ink: #06121d; --brand-soft: #112a3f;
+      --deep: #06121d;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  a { color: var(--brand); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+  header.top { background: var(--surface); border-bottom: 1px solid var(--line); }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; padding-bottom: 14px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; color: var(--ink); text-decoration: none; }
+  .logo img { width: 40px; height: 40px; border-radius: 10px; }
+  nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 16px; }
+  nav a { color: var(--muted); text-decoration: none; font-size: 15px; white-space: nowrap; }
+  nav a:hover { color: var(--brand); }
+  .btn {
+    display: inline-block; background: var(--brand); color: var(--brand-ink); text-decoration: none;
+    padding: 12px 22px; border-radius: 8px; font-weight: 600; border: 2px solid var(--brand);
+  }
+  .btn:hover { filter: brightness(1.08); }
+  .btn.ghost { background: transparent; color: var(--brand); }
+  .hero { padding: 72px 0 56px; background: linear-gradient(180deg, var(--brand-soft), var(--bg)); }
+  .hero h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.15; margin: 0 0 16px; max-width: 18em; }
+  .hero p.lead { font-size: 19px; color: var(--muted); max-width: 38em; margin: 0 0 28px; }
+  .hero .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero-grid { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center; }
+  @media (min-width: 900px) { .hero-grid { grid-template-columns: 0.9fr 1.1fr; } }
+  .shot { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(10, 42, 67, .16); }
+  .shot img { display: block; width: 100%; height: auto; }
+  .frame { display: flex; gap: 6px; padding: 10px 12px; background: var(--brand-soft); border-bottom: 1px solid var(--line); }
+  .frame span { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
+  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 28px; }
+  .gallery figcaption { padding: 14px 16px 16px; }
+  .gallery figcaption strong { display: block; font-size: 17px; margin-bottom: 2px; }
+  .gallery figcaption span { color: var(--muted); font-size: 15px; }
+  .note { color: var(--muted); font-size: 14px; margin-top: 18px; }
+  section { padding: 56px 0; }
+  section h2 { font-size: 28px; margin: 0 0 8px; }
+  section p.sub { color: var(--muted); margin: 0 0 28px; max-width: 40em; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  .card h3 { margin: 0 0 6px; font-size: 18px; }
+  .card p { margin: 0; color: var(--muted); font-size: 16px; }
+  .band { background: var(--deep); color: #eaf3fb; }
+  .band h2, .band p { color: #eaf3fb; }
+  .band p.sub { color: #b9cde0; }
+  .band .btn { background: #ffffff; color: #0a2a43; border-color: #ffffff; }
+  .contact .card { max-width: 560px; }
+  footer { padding: 28px 0 40px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+  .todo { background: #fff4c2; color: #4a3b00; padding: 1px 6px; border-radius: 4px; }
+  @media (max-width: 560px) { .hero { padding: 48px 0 36px; } section { padding: 40px 0; } header.top .wrap { flex-wrap: wrap; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top">
+      <img src="images/hydrointel-iq-mark.png" width="40" height="40" alt="">
+      HydroIntel IQ
+    </a>
+    <nav aria-label="Main">
+      <a href="#what">What we do</a>
+      <a href="#see">Screens</a>
+      <a href="#demo">Demo</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-grid">
+     <div class="hero-text">
+      <h1>Operations software built for water and wastewater plants.</h1>
+      <p class="lead">HydroIntel IQ makes Tailwater, a tool that keeps your sampling, lab results, plant records and compliance in one place, and lets you ask questions of your own data in plain English.</p>
+      <div class="actions">
+        <a class="btn" href="https://demo.hydrointel.ai/demo/">Try the demo</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+     </div>
+     <figure class="shot hero-shot">
+       <div class="frame"><span></span><span></span><span></span></div>
+       <img src="images/dashboard.png" width="1440" height="900" alt="The Tailwater dashboard for a sample wastewater plant, showing dissolved oxygen and flow readings and a sludge holding tank at 57 percent full.">
+     </figure>
+    </div>
+  </div>
+
+  <section id="what">
+    <div class="wrap">
+      <h2>What Tailwater does</h2>
+      <p class="sub">Made with operators and plant managers in mind, so the daily work is quick and the paperwork takes care of itself.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Sampling and compliance</h3>
+          <p>Track what is due, what was collected and what your permit requires, with a clear record behind every result.</p>
+        </div>
+        <div class="card">
+          <h3>Lab and field data</h3>
+          <p>Enter bench sheets and field readings once, and see trends, limits and history without digging through files.</p>
+        </div>
+        <div class="card">
+          <h3>Plant diagram and levels</h3>
+          <p>See your process on a plant diagram, including tank levels and live readings where a SCADA connection is available.</p>
+        </div>
+        <div class="card">
+          <h3>Ask your data</h3>
+          <p>A built-in assistant answers questions from your plant's own records, and your experienced staff can teach it the local rules.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="see">
+    <div class="wrap">
+      <h2>See it in action</h2>
+      <p class="sub">Screens from the Tailwater demo, using sample plant data.</p>
+      <div class="gallery">
+        <figure class="shot">
+          <div class="frame"><span></span><span></span><span></span></div>
+          <img loading="lazy" src="images/plant-diagram.png" width="1440" height="900" alt="A wastewater plant diagram from bar screen to outfall, with live readings and a sludge holding tank level.">
+          <figcaption><strong>Your plant on one diagram</strong><span>Follow the flow from the headworks to the outfall, with readings and tank levels where they happen.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="frame"><span></span><span></span><span></span></div>
+          <img loading="lazy" src="images/compliance.png" width="1440" height="900" alt="A monthly filing readiness table listing each permit limit, how many samples were taken and whether it is complete.">
+          <figcaption><strong>Know your filing is ready</strong><span>Each permit limit is checked against your data, and anything missing is flagged before you file.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="frame"><span></span><span></span><span></span></div>
+          <img loading="lazy" src="images/current-conditions.png" width="1440" height="900" alt="A Current Conditions screen with a tank level gauge and a sensor health summary.">
+          <figcaption><strong>See what needs attention now</strong><span>Tank levels and sensor health in one place, so a silent probe doesn&rsquo;t go unnoticed.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="frame"><span></span><span></span><span></span></div>
+          <img loading="lazy" src="images/sampling-calendar.png" width="1440" height="900" alt="A sampling calendar for the month with required samples placed on the lab pickup days.">
+          <figcaption><strong>A sampling calendar that follows your permit</strong><span>Required samples are laid out for you on your lab&rsquo;s pickup days.</span></figcaption>
+        </figure>
+      </div>
+      <p class="note">Sample data shown for demonstration. Plant names, permit numbers and readings are not from a real plant.</p>
+    </div>
+  </section>
+
+  <section id="demo" class="band">
+    <div class="wrap">
+      <h2>See it for yourself</h2>
+      <p class="sub">The demo uses sample plant data, so you can look around freely. Sign-in details come from us.</p>
+      <a class="btn" href="https://demo.hydrointel.ai/demo/">Open the demo</a>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p class="sub">Tell us about your plant and what you would like to track. We will get back to you.</p>
+      <div class="card">
+        <h3>Email</h3>
+        <p><a href="mailto:greg@hydrointel.ai">greg@hydrointel.ai</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="yr">2026</span> HydroIntel IQ. All rights reserved.</div>
+</footer>
+
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>
