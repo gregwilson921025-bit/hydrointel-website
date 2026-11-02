@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HydroIntel IQ | Tailwater operations software for water and wastewater plants</title>
-<meta name="description" content="Tailwater, built by a 40-year operator: bench sheets, permit limits, eDMR-ready data, lead and copper, pretreatment and biosolids reporting, and CMMS work orders for water and wastewater plants.">
+<title>Tailwater | Powered by HydroIntel IQ</title>
+<meta name="description" content="Tailwater, powered by HydroIntel IQ and built by a 40-year operator: bench sheets, permit limits, eDMR-ready data, lead and copper, pretreatment and biosolids reporting, and CMMS work orders for water and wastewater plants.">
 <link rel="icon" type="image/png" href="images/hydrointel-iq-mark.png">
 <style>
   :root {
@@ -30,6 +30,8 @@
   header.top { background: var(--surface); border-bottom: 1px solid var(--line); }
   header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; padding-bottom: 14px; }
   .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; color: var(--ink); text-decoration: none; }
+  .brand { display: flex; flex-direction: column; line-height: 1.1; }
+  .brand small { font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: .02em; }
   .logo img { width: 40px; height: 40px; border-radius: 10px; }
   nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 16px; }
   nav a { color: var(--muted); text-decoration: none; font-size: 15px; white-space: nowrap; }
@@ -78,7 +80,7 @@
   <div class="wrap">
     <a class="logo" href="#top">
       <img src="images/hydrointel-iq-mark.png" width="40" height="40" alt="">
-      HydroIntel IQ
+      <span class="brand">Tailwater<small>Powered by HydroIntel IQ</small></span>
     </a>
     <nav aria-label="Main">
       <a href="#about">Who built it</a>
@@ -101,7 +103,7 @@
       <div class="actions">
         <a class="btn" href="#demo">See your own plant</a>
         <a class="btn ghost" href="https://demo.hydrointel.ai/demo/">See the demo</a>
-        <a class="btn ghost" href="https://hydrointel-backend-329952321282.us-east1.run.app/plant/">Sign in to HydroIntel IQ</a>
+        <a class="btn ghost" href="https://hydrointel-backend-329952321282.us-east1.run.app/plant/">Sign in to Tailwater</a>
       </div>
      </div>
      <figure class="shot hero-shot">
@@ -115,7 +117,7 @@
     <div class="wrap">
       <h2>Built by an operator</h2>
       <p class="sub">I have run water and wastewater plants for 40 years, and I still run them today as a contract operator. I built Tailwater because the software I used every day was written by people who never ran a plant. Every screen in it came from a problem at one of my plants: a missed sample, a rejected eDMR file, a lost work order.</p>
-      <p class="sub"><strong>Greg Wilson</strong>, HydroIntel IQ</p>
+      <p class="sub"><strong>Greg Wilson</strong>, Tailwater</p>
     </div>
   </section>
 
@@ -231,7 +233,7 @@
 </main>
 
 <footer>
-  <div class="wrap">&copy; <span id="yr">2026</span> HydroIntel IQ. All rights reserved.</div>
+  <div class="wrap">&copy; <span id="yr">2026</span> Tailwater, powered by HydroIntel IQ. All rights reserved.</div>
 </footer>
 
 <script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
