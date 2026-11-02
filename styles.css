@@ -106,9 +106,11 @@ body > main { flex: 1 0 auto; }
 .mini { display: flex; align-items: center; gap: 6px; padding: 7px 12px; border-radius: 8px; color: var(--muted);
   text-decoration: none; font-size: 14px; white-space: nowrap; background: var(--bg); border: 1px solid var(--line); }
 .mini:hover { color: var(--brand); border-color: var(--brand); }
+.home-btn { background: var(--ink); color: var(--bg); border-color: var(--ink); font-weight: 600; }
+.home-btn:hover { color: var(--bg); border-color: var(--ink); opacity: .88; }
 .mini.on { background: var(--brand); color: var(--brand-ink); border-color: var(--brand); }
 @media (max-width: 700px) {
-  .strip-row { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+  .strip-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
   .mini { flex-direction: column; justify-content: center; gap: 4px; padding: 8px 2px; font-size: 11px; line-height: 1.2;
     white-space: normal; text-align: center; min-width: 0; }
 }
