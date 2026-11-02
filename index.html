@@ -63,6 +63,8 @@
   section p.sub { color: var(--muted); margin: 0 0 28px; max-width: 40em; }
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
   .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  h3.group { font-size: 20px; margin: 36px 0 4px; color: var(--brand); }
+  .band .grid + h3.group, .band h3.group { color: #8fd0f5; }
   .card h3 { margin: 0 0 6px; font-size: 18px; }
   .card p { margin: 0; color: var(--muted); font-size: 16px; }
   .band { background: var(--deep); color: #eaf3fb; }
@@ -130,47 +132,109 @@
   <section id="what">
     <div class="wrap">
       <h2>What Tailwater does</h2>
-      <p class="sub">Made for operators and plant managers, so the daily work goes quick and the EPA paperwork is ready when it's due.</p>
+      <p class="sub">One program for the daily work, the compliance work and the maintenance work. Every number is saved with the name of the person who entered it.</p>
+      <h3 class="group">Daily operations</h3>
+      <p class="sub">What operators do every shift.</p>
       <div class="grid">
         <div class="card">
-          <h3>Permit limits and eDMR</h3>
-          <p>Bench sheet columns carry the same locations and STORET codes as your permit. Each limit is checked against your data, and missing samples are flagged before the month closes.</p>
+          <h3>Bench sheets</h3>
+          <p>Enter a day's lab and field data on bench sheets laid out like your permit. Values save with your name, and corrections keep their history.</p>
+        </div>
+        <div class="card">
+          <h3>Rounds</h3>
+          <p>Build your operator rounds once. Walk them in stages, and the readings go straight into the database. Print a blank sheet when you need paper.</p>
+        </div>
+        <div class="card">
+          <h3>Operator notes</h3>
+          <p>Daily observations and standing items in one searchable log, so the next shift knows what you saw, what you did and what you're waiting on.</p>
+        </div>
+        <div class="card">
+          <h3>Current conditions and dashboard</h3>
+          <p>Latest readings, trend tiles and what needs attention, with the time each reading came in.</p>
+        </div>
+        <div class="card">
+          <h3>Imports</h3>
+          <p>Bring in Operator10 exports and spreadsheets. You review and map each column before anything becomes a reading.</p>
+        </div>
+        <div class="card">
+          <h3>Graphs and Graph Studio</h3>
+          <p>Trend any reading over any period, side by side, and save the charts you use.</p>
+        </div>
+      </div>
+      <h3 class="group">Process control</h3>
+      <p class="sub">Tools that tell you how the plant is really doing.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Mass balance</h3>
+          <p>Pounds in against pounds out. The gap tells you how good your sampling and flow metering really are, even when nothing is wrong.</p>
+        </div>
+        <div class="card">
+          <h3>Chemicals</h3>
+          <p>What you feed, what it costs and what is left in the tank, with cost per million gallons treated so months and plants compare fairly.</p>
+        </div>
+        <div class="card">
+          <h3>Lab reagents</h3>
+          <p>The EPA reagent record: vendor, catalog, batch and dates. Each test you record counts one off the bottle that expires first, so you reorder before the bench runs dry.</p>
+        </div>
+      </div>
+      <h3 class="group">Compliance and reporting</h3>
+      <p class="sub">The paperwork, ready before it is due.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Permit limits and violations</h3>
+          <p>Each permit limit is checked against your data every month. Missing samples and exceedances are flagged before you file.</p>
         </div>
         <div class="card">
           <h3>Sampling calendar</h3>
-          <p>Required samples are laid out on your lab's pickup days, so a sample doesn't get missed late in the period.</p>
+          <p>Reads every limit that has a monitoring frequency, works out how many samples the month owes, and puts them on your lab's pickup days.</p>
         </div>
         <div class="card">
-          <h3>Lab and field data</h3>
-          <p>Enter bench sheets and field readings once, and see trends, limits and history without digging through files.</p>
+          <h3>Monthly reports and eDMR</h3>
+          <p>The monthly filing comes first. Tailwater builds the export for your state's eDMR and the other reports you owe an agency.</p>
         </div>
         <div class="card">
-          <h3>Plant diagram and levels</h3>
-          <p>See your process on a plant diagram, including tank levels and live readings where a SCADA connection is available.</p>
+          <h3>Biosolids</h3>
+          <p>Batches, fields and loads out, checked against the 40 CFR 503 ceilings, and the annual biosolids report built from what you logged.</p>
         </div>
         <div class="card">
-          <h3>Maintenance work orders (CMMS)</h3>
-          <p>Equipment list, scheduled and corrective work orders, and maintenance history in one place. Built to meet the EPA asset management and CMMS requirements for your system.</p>
+          <h3>Pretreatment</h3>
+          <p>Your industrial users, their permits and limits. Significant non-compliance is worked out from the last six months of results, and permits expiring inside 90 days are flagged.</p>
         </div>
         <div class="card">
-          <h3>Pretreatment and biosolids</h3>
-          <p>Track industrial users, sampling and limits for your pretreatment program, and biosolids quantities, analyses and land application records. Reports come straight from the data you already entered.</p>
+          <h3>Surcharges</h3>
+          <p>Set your sewer-use ordinance rates and Tailwater figures what each industry owes for strength over the domestic allowance.</p>
+        </div>
+      </div>
+      <h3 class="group">Maintenance (CMMS)</h3>
+      <p class="sub">Built to meet the EPA asset management and CMMS requirements for your system.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Work orders</h3>
+          <p>Corrective and scheduled work orders, with priority set from asset criticality and total cost captured when the job is closed.</p>
         </div>
         <div class="card">
-          <h3>Rounds and operator notes</h3>
-          <p>Operators log rounds and shift notes in the program, so the next shift sees what was checked, what was found and what still needs attention.</p>
+          <h3>PM schedules</h3>
+          <p>Recurring maintenance turns into work orders on its own when it comes due, so nothing waits on someone remembering.</p>
         </div>
         <div class="card">
-          <h3>What affects what</h3>
-          <p>See how your process readings tie together, so you can trace what a change at one point does to the rest of the plant.</p>
+          <h3>Assets and equipment</h3>
+          <p>Your equipment list by location, with criticality, history and the tasks that go with each piece.</p>
         </div>
         <div class="card">
-          <h3>Graph Studio</h3>
-          <p>Build your own trend charts from any readings you track, side by side, and save them for the next time you need them.</p>
+          <h3>Inventory and purchasing</h3>
+          <p>Parts, storerooms, vendors and purchase orders. Every movement is logged, and parts below minimum are flagged.</p>
+        </div>
+      </div>
+      <h3 class="group">Records you can trust</h3>
+      <p class="sub">Built for the day an inspector asks.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Audit trail</h3>
+          <p>Every entry, change and deletion is recorded with the person signed in. The record itself can't be edited.</p>
         </div>
         <div class="card">
-          <h3>Ask your data</h3>
-          <p>A built-in assistant answers questions from your plant's own records, and your experienced staff can teach it the local rules.</p>
+          <h3>Permissions</h3>
+          <p>You decide who can enter data, correct it, delete it and change formats, by role or by person.</p>
         </div>
         <div class="card">
           <h3>We set it up for you</h3>
@@ -183,23 +247,31 @@
   <section id="sme" class="band">
     <div class="wrap">
       <h2>Your best operator's knowledge stays at the plant</h2>
-      <p class="sub">Every plant runs on things that aren't in the O&amp;M manual: which pump to favor in wet weather, what the DO probe does when it's going bad, when to waste harder in the spring. That knowledge lives in a few people's heads, and it leaves when they retire or move on.</p>
+      <p class="sub">Every plant runs on things that aren't in the O&amp;M manual: which pump to favor in wet weather, what the DO probe does when it's going bad, when to waste harder in the spring. That knowledge lives in a few people's heads, and it leaves when they retire or move on. Tailwater gives it a place to stay.</p>
       <div class="grid">
         <div class="card">
-          <h3>Your SME writes the rule</h3>
-          <p>Your senior operator or plant manager adds a rule in plain words, like they'd tell a new hire. Only people you authorize can add or approve rules.</p>
+          <h3>SME rules, in your own words</h3>
+          <p>Your senior operator writes the rule like they'd tell a new hire. Their words are kept exactly. Tailwater makes a plainer version to help find the rule, and the author checks that it still means the same thing.</p>
         </div>
         <div class="card">
-          <h3>Attach what backs it up</h3>
-          <p>Drawings, schematics, SOPs and photos go in with a caption and are tied to the equipment on the plant diagram, so they're one click away where they apply.</p>
+          <h3>Who wrote it and where it applies</h3>
+          <p>Every rule is stored with its author. A rule can apply to one plant or all of your plants, and old rules are retired, not lost.</p>
         </div>
         <div class="card">
-          <h3>Everyone gets the answer</h3>
-          <p>When an operator asks Tailwater a question, it answers from your plant's own rules and records first, not generic textbook advice.</p>
+          <h3>What affects what</h3>
+          <p>Cause and effect, written as sentences: when this reading goes up, that one moves, and here is why. The what-if screen on the plant drawing uses these rules to show a trainee what a change does downstream.</p>
         </div>
         <div class="card">
-          <h3>It gets smarter about your plant</h3>
-          <p>Each rule your people add makes Tailwater fit your plant better. A new operator on night shift gets the same answer your 30-year operator would give.</p>
+          <h3>Plant Library</h3>
+          <p>Drawings and schematics, SOPs and photos, each with a caption, kept with the plant so they're there when someone needs them.</p>
+        </div>
+        <div class="card">
+          <h3>Ask your data</h3>
+          <p>Ask a question in plain English. Answers cite the reading and the time it was taken, and your plant's SME rules come first.</p>
+        </div>
+        <div class="card">
+          <h3>A certified operator decides</h3>
+          <p>Tailwater recommends; a certified operator reviews before acting. Saving a rule records reviewed human guidance. It doesn't train a model on your data.</p>
         </div>
       </div>
     </div>
