@@ -65,6 +65,13 @@
   .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
   h3.group { font-size: 20px; margin: 36px 0 4px; color: var(--brand); }
   .band .grid + h3.group, .band h3.group { color: #8fd0f5; }
+  .tabs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 8px 0 4px; }
+  .tab { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px 8px; background: var(--surface); color: var(--muted); border: 1px solid var(--line); border-radius: 12px; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+  .tab:hover { color: var(--brand); border-color: var(--brand); }
+  .tab[aria-selected="true"] { background: var(--brand); color: var(--brand-ink); border-color: var(--brand); }
+  .js .panel[hidden] { display: none; }
+  .panel h3.group { margin-top: 28px; }
+  @media (max-width: 700px) { .tabs { grid-template-columns: repeat(3, 1fr); } .tab { font-size: 13px; padding: 12px 4px; } }
   .card h3 { margin: 0 0 6px; font-size: 18px; }
   .card p { margin: 0; color: var(--muted); font-size: 16px; }
   .band { background: var(--deep); color: #eaf3fb; }
@@ -133,6 +140,14 @@
     <div class="wrap">
       <h2>What Tailwater does</h2>
       <p class="sub">One program for the daily work, the compliance work and the maintenance work. Every number is saved with the name of the person who entered it.</p>
+      <div class="tabs" role="tablist" aria-label="Feature groups">
+        <button class="tab" role="tab" id="t-ops" aria-controls="g-ops" aria-selected="false"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6v3H9z"/><path d="M7 5H5v16h14V5h-2"/><path d="M8 11h8M8 15h8M8 19h5"/></svg><span>Daily operations</span></button>
+        <button class="tab" role="tab" id="t-process" aria-controls="g-process" aria-selected="false"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18a8 8 0 1 1 16 0"/><path d="M12 18l4-6"/><circle cx="12" cy="18" r="1.4"/></svg><span>Process control</span></button>
+        <button class="tab" role="tab" id="t-compliance" aria-controls="g-compliance" aria-selected="false"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Compliance</span></button>
+        <button class="tab" role="tab" id="t-maint" aria-controls="g-maint" aria-selected="false"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5a4 4 0 0 0-5 5L4 16l4 4 5.5-5.5a4 4 0 0 0 5-5l-2.5 2.5-2.5-.5-.5-2.5z"/></svg><span>Maintenance</span></button>
+        <button class="tab" role="tab" id="t-records" aria-controls="g-records" aria-selected="false"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>Records</span></button>
+      </div>
+      <div class="panel" id="g-ops" role="tabpanel" aria-labelledby="t-ops">
       <h3 class="group">Daily operations</h3>
       <p class="sub">What operators do every shift.</p>
       <div class="grid">
@@ -161,6 +176,8 @@
           <p>Trend any reading over any period, side by side, and save the charts you use.</p>
         </div>
       </div>
+      </div>
+      <div class="panel" id="g-process" role="tabpanel" aria-labelledby="t-process">
       <h3 class="group">Process control</h3>
       <p class="sub">Tools that tell you how the plant is really doing.</p>
       <div class="grid">
@@ -177,6 +194,8 @@
           <p>The EPA reagent record: vendor, catalog, batch and dates. Each test you record counts one off the bottle that expires first, so you reorder before the bench runs dry.</p>
         </div>
       </div>
+      </div>
+      <div class="panel" id="g-compliance" role="tabpanel" aria-labelledby="t-compliance">
       <h3 class="group">Compliance and reporting</h3>
       <p class="sub">The paperwork, ready before it is due.</p>
       <div class="grid">
@@ -205,6 +224,8 @@
           <p>Set your sewer-use ordinance rates and Tailwater figures what each industry owes for strength over the domestic allowance.</p>
         </div>
       </div>
+      </div>
+      <div class="panel" id="g-maint" role="tabpanel" aria-labelledby="t-maint">
       <h3 class="group">Maintenance (CMMS)</h3>
       <p class="sub">Built to meet the EPA asset management and CMMS requirements for your system.</p>
       <div class="grid">
@@ -225,6 +246,8 @@
           <p>Parts, storerooms, vendors and purchase orders. Every movement is logged, and parts below minimum are flagged.</p>
         </div>
       </div>
+      </div>
+      <div class="panel" id="g-records" role="tabpanel" aria-labelledby="t-records">
       <h3 class="group">Records you can trust</h3>
       <p class="sub">Built for the day an inspector asks.</p>
       <div class="grid">
@@ -240,6 +263,7 @@
           <h3>We set it up for you</h3>
           <p>We pull your permit from the EPA and build your bench sheets, permit limits, sampling calendar, plant diagram and equipment list. You review it with us before you go live.</p>
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -352,5 +376,20 @@
 </footer>
 
 <script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+<script>
+(function () {
+  document.documentElement.classList.add("js");
+  var tabs = document.querySelectorAll(".tab");
+  function show(id) {
+    tabs.forEach(function (t) {
+      var on = t.getAttribute("aria-controls") === id;
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+    });
+  }
+  tabs.forEach(function (t) { t.addEventListener("click", function () { show(t.getAttribute("aria-controls")); }); });
+  if (tabs.length) show(tabs[0].getAttribute("aria-controls"));
+})();
+</script>
 </body>
 </html>
